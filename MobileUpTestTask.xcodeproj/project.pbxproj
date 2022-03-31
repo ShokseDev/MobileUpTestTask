@@ -13,6 +13,9 @@
 		E643AA3227F3847E00BE5989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E643AA3027F3847E00BE5989 /* LaunchScreen.storyboard */; };
 		E643AA3F27F38A7700BE5989 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA3D27F38A7700BE5989 /* LoginScreenViewController.swift */; };
 		E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA3E27F38A7700BE5989 /* LoginScreen.xib */; };
+		E643AA4A27F4F3A800BE5989 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA4927F4F3A800BE5989 /* VKDelegate.swift */; };
+		E643AA4F27F4F9EC00BE5989 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */; };
+		E643AA5027F4F9EC00BE5989 /* GalleryCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */; };
 		F3A53BBE46C6A8214D0C558C /* Pods_MobileUpTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		E643AA4327F39BB700BE5989 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		E643AA4427F39BE500BE5989 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		E643AA4527F39BEE00BE5989 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		E643AA4927F4F3A800BE5989 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
+		E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
+		E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionView.xib; sourceTree = "<group>"; };
 		F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileUpTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -51,7 +57,6 @@
 				A553C5E163D30546D3788FE5 /* Pods-MobileUpTestTask.debug.xcconfig */,
 				7FB020355FAD475EB60937C7 /* Pods-MobileUpTestTask.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,9 +89,7 @@
 		E643AA2427F3847400BE5989 /* MobileUpTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA2727F3847400BE5989 /* SceneDelegate.swift */,
-				E643AA2527F3847400BE5989 /* AppDelegate.swift */,
-				E643AA3327F3847E00BE5989 /* Info.plist */,
+				E643AA4727F4F32700BE5989 /* App */,
 				E643AA3B27F387F700BE5989 /* Models */,
 				E643AA3927F387D200BE5989 /* Views */,
 				E643AA3A27F387ED00BE5989 /* Controllers */,
@@ -99,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				E643AA3C27F3889E00BE5989 /* LoginScreen */,
+				E643AA4B27F4F95D00BE5989 /* Gallery */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				E643AA4127F38A8E00BE5989 /* LoginScreen */,
+				E643AA4C27F4F9A900BE5989 /* Gallery */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		E643AA3B27F387F700BE5989 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E643AA4827F4F35200BE5989 /* Auth */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E643AA4627F39BF300BE5989 /* Fonts */,
+				E643AA3327F3847E00BE5989 /* Info.plist */,
 				E643AA2E27F3847E00BE5989 /* Assets.xcassets */,
 				E643AA3027F3847E00BE5989 /* LaunchScreen.storyboard */,
 			);
@@ -152,6 +159,39 @@
 				E643AA4527F39BEE00BE5989 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E643AA4727F4F32700BE5989 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA2727F3847400BE5989 /* SceneDelegate.swift */,
+				E643AA2527F3847400BE5989 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E643AA4827F4F35200BE5989 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA4927F4F3A800BE5989 /* VKDelegate.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E643AA4B27F4F95D00BE5989 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		E643AA4C27F4F9A900BE5989 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +257,7 @@
 				E643AA3227F3847E00BE5989 /* LaunchScreen.storyboard in Resources */,
 				E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */,
 				E643AA2F27F3847E00BE5989 /* Assets.xcassets in Resources */,
+				E643AA5027F4F9EC00BE5989 /* GalleryCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E643AA4F27F4F9EC00BE5989 /* GalleryCollectionViewController.swift in Sources */,
 				E643AA2627F3847400BE5989 /* AppDelegate.swift in Sources */,
 				E643AA2827F3847400BE5989 /* SceneDelegate.swift in Sources */,
 				E643AA3F27F38A7700BE5989 /* LoginScreenViewController.swift in Sources */,
+				E643AA4A27F4F3A800BE5989 /* VKDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +456,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PC2MGZ83PZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileUpTestTask/Info.plist;
+				INFOPLIST_FILE = MobileUpTestTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -442,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PC2MGZ83PZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MobileUpTestTask/Info.plist;
+				INFOPLIST_FILE = MobileUpTestTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
