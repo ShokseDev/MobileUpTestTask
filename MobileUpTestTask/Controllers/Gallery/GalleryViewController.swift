@@ -9,21 +9,24 @@ import UIKit
 import SwiftyVK
 
 class GalleryViewController: UIViewController {
+	
+	public var photoGallery = [Photo]()
+	public var photosHaveBeenLoaded = false
+	
+	private lazy var photoManager: PhotoProtocol = PhotoManager(viewController: self)
     
     @IBOutlet weak var galleryCollectionView: UICollectionView!
-    
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Collection view setup
-        galleryCollectionView.delegate = self
-        galleryCollectionView.dataSource = self
-        
-        configNavBar()
+		setupCollectionView()
+        setupNavBar()
     }
     
-    private func configNavBar() {
+    private func setupNavBar() {
         self.navigationItem.title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.backgroundColor = .systemBackground
         self.navigationController?.navigationBar.barTintColor = .systemBackground
@@ -33,6 +36,31 @@ class GalleryViewController: UIViewController {
         button.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)], for: .normal)
         self.navigationItem.rightBarButtonItem = button
     }
+	
+	private func setupCollectionView() {
+		galleryCollectionView.delegate = self
+		galleryCollectionView.dataSource = self
+		galleryCollectionView.register(UINib(nibName: "GalleryView", bundle: nil), forCellWithReuseIdentifier: "galleryCell")
+	}
+	
+	private func loadPhotos() {
+		DispatchQueue.main.async {
+			self.activityIndicator.startAnimating()
+		}
+		photoManager.loadPhotos { (success: Bool) -> Void in
+			if success {
+				DispatchQueue.main.async {
+					self.galleryCollectionView.isHidden = false
+					self.activityIndicator.stopAnimating()
+					self.photosHaveBeenLoaded = true
+					self.galleryCollectionView.reloadData()
+				}
+			} else {
+				self.activityIndicator.stopAnimating()
+				print("Fail loading photos in \(#function)")
+			}
+		}
+	}
     
     @objc private func logout() {
         VK.sessions.default.logOut()
