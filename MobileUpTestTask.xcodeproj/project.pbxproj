@@ -14,8 +14,8 @@
 		E643AA3F27F38A7700BE5989 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA3D27F38A7700BE5989 /* LoginScreenViewController.swift */; };
 		E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA3E27F38A7700BE5989 /* LoginScreen.xib */; };
 		E643AA4A27F4F3A800BE5989 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA4927F4F3A800BE5989 /* VKDelegate.swift */; };
-		E643AA4F27F4F9EC00BE5989 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */; };
-		E643AA5027F4F9EC00BE5989 /* GalleryCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */; };
+		E643AA5327F6741B00BE5989 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA5127F6741B00BE5989 /* GalleryViewController.swift */; };
+		E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA5227F6741B00BE5989 /* GalleryView.xib */; };
 		F3A53BBE46C6A8214D0C558C /* Pods_MobileUpTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 		E643AA4427F39BE500BE5989 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		E643AA4527F39BEE00BE5989 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		E643AA4927F4F3A800BE5989 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
-		E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
-		E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryCollectionView.xib; sourceTree = "<group>"; };
+		E643AA5127F6741B00BE5989 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		E643AA5227F6741B00BE5989 /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileUpTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -181,7 +181,7 @@
 		E643AA4B27F4F95D00BE5989 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA4E27F4F9EC00BE5989 /* GalleryCollectionView.xib */,
+				E643AA5127F6741B00BE5989 /* GalleryViewController.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -189,7 +189,7 @@
 		E643AA4C27F4F9A900BE5989 /* Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA4D27F4F9EC00BE5989 /* GalleryCollectionViewController.swift */,
+				E643AA5227F6741B00BE5989 /* GalleryView.xib */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -255,9 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E643AA3227F3847E00BE5989 /* LaunchScreen.storyboard in Resources */,
+				E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */,
 				E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */,
 				E643AA2F27F3847E00BE5989 /* Assets.xcassets in Resources */,
-				E643AA5027F4F9EC00BE5989 /* GalleryCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +310,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E643AA4F27F4F9EC00BE5989 /* GalleryCollectionViewController.swift in Sources */,
 				E643AA2627F3847400BE5989 /* AppDelegate.swift in Sources */,
 				E643AA2827F3847400BE5989 /* SceneDelegate.swift in Sources */,
+				E643AA5327F6741B00BE5989 /* GalleryViewController.swift in Sources */,
 				E643AA3F27F38A7700BE5989 /* LoginScreenViewController.swift in Sources */,
 				E643AA4A27F4F3A800BE5989 /* VKDelegate.swift in Sources */,
 			);

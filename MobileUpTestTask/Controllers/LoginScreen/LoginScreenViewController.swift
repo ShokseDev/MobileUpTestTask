@@ -50,7 +50,7 @@ final class LoginScreenViewController: UIViewController {
 	
 	// Function for transition to gallery
 	private func galleryShow() {
-		let root = GalleryCollectionViewController(nibName: "GalleryCollectionView", bundle: nil)
+		let root = GalleryViewController(nibName: "GalleryView", bundle: nil)
 		let navigationController = UINavigationController(rootViewController: root)
 		navigationController.modalPresentationStyle = .fullScreen
 		
