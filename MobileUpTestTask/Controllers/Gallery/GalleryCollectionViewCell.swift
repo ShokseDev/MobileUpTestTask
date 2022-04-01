@@ -11,7 +11,10 @@ class GalleryCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
+    
+    override func prepareForReuse() {
+        layer.borderWidth = 0
+    } 
 
 }
