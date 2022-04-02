@@ -1,16 +1,20 @@
 PODS:
+  - Kingfisher (7.2.0)
   - SwiftyVK (3.4.2)
 
 DEPENDENCIES:
+  - Kingfisher (~> 7.0)
   - SwiftyVK
 
 SPEC REPOS:
   trunk:
+    - Kingfisher
     - SwiftyVK
 
 SPEC CHECKSUMS:
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   SwiftyVK: 5005dac6e85f7b0fd44e21ed2f021a397dff4cab
 
-PODFILE CHECKSUM: 4049f86ed60f3c116771586d145ceed94ce26579
+PODFILE CHECKSUM: 10088cc24463489a11f814523b3758be6e6efffc
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

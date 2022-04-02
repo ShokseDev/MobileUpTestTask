@@ -5,8 +5,9 @@ target 'MobileUpTestTask' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'SwiftyVK', :inhibit_warnings => true
-
   # Pods for MobileUpTestTask
+
+pod 'SwiftyVK', :inhibit_warnings => true
+pod 'Kingfisher', '~> 7.0'
 
 end

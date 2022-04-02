@@ -10,12 +10,31 @@ import UIKit
 class GalleryCollectionViewCell: UICollectionViewCell {
 	
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func prepareForReuse() {
-        layer.borderWidth = 0
-    } 
+	public let cellImageView: UIImageView = {
+		let ImageView = UIImageView()
+		ImageView.image = UIImage(named: "noPhoto")
+		ImageView.translatesAutoresizingMaskIntoConstraints = false
+		ImageView.contentMode = .scaleAspectFill
+		ImageView.clipsToBounds = true
+		return ImageView
+	}()
+
+
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setUpImageView()
+	}
+
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	private func setUpImageView() {
+		contentView.addSubview(cellImageView)
+		cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+		cellImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+		cellImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+		cellImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+	}
 
 }

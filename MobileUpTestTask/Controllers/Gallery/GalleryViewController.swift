@@ -7,12 +7,16 @@
 
 import UIKit
 import SwiftyVK
+import Kingfisher
 
-class GalleryViewController: UIViewController {
+class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayout {
 	
 	public var photoGallery = [Photo]()
 	public var photosHaveBeenLoaded = false
 	
+	private let cellId = "galleryCell"
+	private let itemsSpacing: CGFloat = 2
+	private let itemsPerRow: CGFloat = 2
 	private lazy var photoManager: PhotoProtocol = PhotoManager(viewController: self)
     
     @IBOutlet weak var galleryCollectionView: UICollectionView!
@@ -24,6 +28,10 @@ class GalleryViewController: UIViewController {
         
 		setupCollectionView()
         setupNavBar()
+		
+		DispatchQueue.global(qos: .userInteractive).async {
+			self.loadPhotos()
+		}
     }
     
     private func setupNavBar() {
@@ -38,9 +46,10 @@ class GalleryViewController: UIViewController {
     }
 	
 	private func setupCollectionView() {
-		galleryCollectionView.delegate = self
+		galleryCollectionView.register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+		galleryCollectionView.isHidden = true
 		galleryCollectionView.dataSource = self
-		galleryCollectionView.register(UINib(nibName: "GalleryView", bundle: nil), forCellWithReuseIdentifier: "galleryCell")
+		galleryCollectionView.reloadData()
 	}
 	
 	private func loadPhotos() {
@@ -68,18 +77,28 @@ class GalleryViewController: UIViewController {
     }
 }
 
-extension GalleryViewController: UICollectionViewDelegate {
-    
-}
-
 extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+		return photoGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+		let optCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell
+		guard let cell = optCell else {
+			fatalError("nil cell in \(#function)")
+		}
+		cell.cellImageView.image = UIImage(named: "noPhoto")
+		if photosHaveBeenLoaded, let url = URL(string: photoGallery[indexPath.row].biggestImage.url) {
+			cell.cellImageView.kf.setImage(with: url)
+			activityIndicator.isHidden = true
+		}
+		return cell
     }
-    
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let spacing = (itemsPerRow - 1) * itemsSpacing
+		let size = (collectionView.bounds.width - spacing) / itemsPerRow
+		return CGSize(width: size, height: size)
+	}
     
 }
