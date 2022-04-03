@@ -9,7 +9,7 @@ import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
 	
-
+	// MARK: Setup Image View
 	public let cellImageView: UIImageView = {
 		let ImageView = UIImageView()
 		ImageView.image = UIImage(named: "noPhoto")
@@ -29,6 +29,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	// MARK: Image View constraints 
 	private func setUpImageView() {
 		contentView.addSubview(cellImageView)
 		cellImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true

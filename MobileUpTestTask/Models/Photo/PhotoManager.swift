@@ -8,14 +8,17 @@
 import Foundation
 import SwiftyVK
 
+// MARK: Downloading protocol
 protocol PhotoProtocol {
 	func loadPhotos(completion: @escaping (_ success: Bool) -> Void)
 }
 
+// MARK: Downloading
 class PhotoManager: PhotoProtocol {
 	
 	private var gallery: GalleryViewController
 	
+	// MARK: Parameters for API
 	private struct RequestParams {
 		static let ownerId = "-128666765"
 		static let albumId = "266276915"
@@ -43,6 +46,7 @@ class PhotoManager: PhotoProtocol {
 		}
 	}
 	
+	// MARK: Request for API
 	private func photoRequest(completion: @escaping (Result<Bool, RequestError>) -> Void) {
 		VK.API.Photos.get([
 			.ownerId: RequestParams.ownerId,

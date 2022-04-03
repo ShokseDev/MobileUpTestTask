@@ -33,6 +33,7 @@ class GalleryViewController: UIViewController {
 		}
     }
     
+	// MARK: Config Navigation Bar and setup logout button
     private func setupNavBar() {
         self.navigationItem.title = "Mobile Up Gallery"
         self.navigationController?.navigationBar.backgroundColor = .systemBackground
@@ -83,6 +84,7 @@ extension GalleryViewController: UICollectionViewDataSource {
 		return photoGallery.count
     }
     
+	// MARK: Load photos to cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let optCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell
 		guard let cell = optCell else {
@@ -101,13 +103,27 @@ extension GalleryViewController: UICollectionViewDataSource {
 
 extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 	
+	// MARK: Setup cell size and spacing
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 		let frameCV = collectionView.frame
 		let widhtCell = frameCV.width / CGFloat(itemsPerRow)
 		let heightCell = widhtCell
 
-		let spacing = CGFloat(itemsPerRow + 1) * itemsSpacing / CGFloat(itemsPerRow)
+		let spacing = CGFloat(itemsPerRow - 1) * itemsSpacing / CGFloat(itemsPerRow)
 		return CGSize(width: widhtCell - spacing, height: heightCell - (itemsSpacing * 2))
+	}
+	
+	// MARK: Transition to Detail view
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let detailVC = DetailViewController()
+		detailVC.detailURL = photoGallery[indexPath.row].biggestImage.url
+		detailVC.date = photoGallery[indexPath.row].date
+		navigationItem.backButtonTitle = ""
+		guard let navigationController = navigationController else {
+			fatalError("nil navigationController in \(#function)")
+		}
+		navigationController.navigationBar.tintColor = .black
+		navigationController.pushViewController(detailVC, animated: true)
 	}
 }

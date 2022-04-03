@@ -19,6 +19,8 @@
 		E643AA5327F6741B00BE5989 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA5127F6741B00BE5989 /* GalleryViewController.swift */; };
 		E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA5227F6741B00BE5989 /* GalleryView.xib */; };
 		E643AA5727F68B7D00BE5989 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA5527F68B7D00BE5989 /* GalleryCollectionViewCell.swift */; };
+		E686F92F27F9EEAA002D4EB5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */; };
+		E686F93027F9EEAA002D4EB5 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E686F92E27F9EEAA002D4EB5 /* DetailView.xib */; };
 		F3A53BBE46C6A8214D0C558C /* Pods_MobileUpTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,13 +37,12 @@
 		E643AA3327F3847E00BE5989 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E643AA3D27F38A7700BE5989 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		E643AA3E27F38A7700BE5989 /* LoginScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreen.xib; sourceTree = "<group>"; };
-		E643AA4327F39BB700BE5989 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		E643AA4427F39BE500BE5989 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
-		E643AA4527F39BEE00BE5989 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		E643AA4927F4F3A800BE5989 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
 		E643AA5127F6741B00BE5989 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		E643AA5227F6741B00BE5989 /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		E643AA5527F68B7D00BE5989 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E686F92E27F9EEAA002D4EB5 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileUpTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +119,7 @@
 			children = (
 				E643AA3C27F3889E00BE5989 /* LoginScreen */,
 				E643AA4B27F4F95D00BE5989 /* Gallery */,
+				E686F92C27F9DB25002D4EB5 /* Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			children = (
 				E643AA4127F38A8E00BE5989 /* LoginScreen */,
 				E643AA4C27F4F9A900BE5989 /* Gallery */,
+				E686F92B27F9DA94002D4EB5 /* Detail */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,22 +161,11 @@
 		E643AA4227F38B3500BE5989 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA4627F39BF300BE5989 /* Fonts */,
 				E643AA3327F3847E00BE5989 /* Info.plist */,
 				E643AA2E27F3847E00BE5989 /* Assets.xcassets */,
 				E643AA3027F3847E00BE5989 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E643AA4627F39BF300BE5989 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				E643AA4327F39BB700BE5989 /* SF-Pro-Display-Bold.otf */,
-				E643AA4427F39BE500BE5989 /* SF-Pro-Display-Medium.otf */,
-				E643AA4527F39BEE00BE5989 /* SF-Pro-Display-Semibold.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E643AA4727F4F32700BE5989 /* App */ = {
@@ -201,6 +193,22 @@
 				E643AA5527F68B7D00BE5989 /* GalleryCollectionViewCell.swift */,
 			);
 			path = Gallery;
+			sourceTree = "<group>";
+		};
+		E686F92B27F9DA94002D4EB5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E686F92C27F9DB25002D4EB5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E686F92E27F9EEAA002D4EB5 /* DetailView.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +273,7 @@
 			files = (
 				E643AA3227F3847E00BE5989 /* LaunchScreen.storyboard in Resources */,
 				E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */,
+				E686F93027F9EEAA002D4EB5 /* DetailView.xib in Resources */,
 				E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */,
 				E643AA2F27F3847E00BE5989 /* Assets.xcassets in Resources */,
 			);
@@ -319,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E686F92F27F9EEAA002D4EB5 /* DetailViewController.swift in Sources */,
 				E62A859727F793F000CF747D /* Photo.swift in Sources */,
 				E643AA2627F3847400BE5989 /* AppDelegate.swift in Sources */,
 				E62A859B27F7978A00CF747D /* PhotoManager.swift in Sources */,

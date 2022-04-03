@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Photo array configuration
 struct Photo: Decodable {
 	let date: Double
 	let info: [PhotoInfo]
@@ -34,6 +35,7 @@ struct Photo: Decodable {
 	}
 }
 
+// MARK: Catch photo parameters
 struct PhotoInfo: Decodable {
 	let height: Int
 	let width: Int
