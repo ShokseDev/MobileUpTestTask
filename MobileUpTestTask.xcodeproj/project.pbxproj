@@ -20,7 +20,7 @@
 		E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E643AA5227F6741B00BE5989 /* GalleryView.xib */; };
 		E643AA5727F68B7D00BE5989 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA5527F68B7D00BE5989 /* GalleryCollectionViewCell.swift */; };
 		E686F92F27F9EEAA002D4EB5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */; };
-		E686F93027F9EEAA002D4EB5 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E686F92E27F9EEAA002D4EB5 /* DetailView.xib */; };
+		E686F93227FA1715002D4EB5 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E686F93127FA1715002D4EB5 /* DetailView.xib */; };
 		F3A53BBE46C6A8214D0C558C /* Pods_MobileUpTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		E643AA5227F6741B00BE5989 /* GalleryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryView.xib; sourceTree = "<group>"; };
 		E643AA5527F68B7D00BE5989 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E686F92E27F9EEAA002D4EB5 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		E686F93127FA1715002D4EB5 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		F45E105E8C1B0034199F5590 /* Pods_MobileUpTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileUpTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -206,7 +206,7 @@
 		E686F92C27F9DB25002D4EB5 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				E686F92E27F9EEAA002D4EB5 /* DetailView.xib */,
+				E686F93127FA1715002D4EB5 /* DetailView.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -273,9 +273,9 @@
 			files = (
 				E643AA3227F3847E00BE5989 /* LaunchScreen.storyboard in Resources */,
 				E643AA5427F6741B00BE5989 /* GalleryView.xib in Resources */,
-				E686F93027F9EEAA002D4EB5 /* DetailView.xib in Resources */,
 				E643AA4027F38A7700BE5989 /* LoginScreen.xib in Resources */,
 				E643AA2F27F3847E00BE5989 /* Assets.xcassets in Resources */,
+				E686F93227FA1715002D4EB5 /* DetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

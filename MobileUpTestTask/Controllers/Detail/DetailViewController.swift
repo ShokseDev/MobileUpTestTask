@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
 	
 	
 	@IBOutlet weak var detailImageView: UIImageView!
+	@IBOutlet weak var detailScrollView: UIScrollView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class DetailViewController: UIViewController {
 		loadImage()
 		dateTitle()
 		shareButton()
+		scrollViewConfig()
 		
     }
 
@@ -51,7 +53,7 @@ class DetailViewController: UIViewController {
 		navigationItem.rightBarButtonItem = shareButton
 	}
 	
-	// MARK: Present Activity View if share button was tapped
+	// MARK: Present Activity View if button was tapped
 	@objc private func shareAction() {
 		guard let image = detailImageView.image else {
 			fatalError("nil image in \(#function)")
@@ -78,5 +80,22 @@ class DetailViewController: UIViewController {
 		}))
 		present(alert, animated: true, completion: nil)
 	}
+	
+	// MARK: Zoom Action setup
+	
+	private func scrollViewConfig() {
+		detailScrollView.delegate = self
+		detailScrollView.minimumZoomScale = 1.0
+		detailScrollView.maximumZoomScale = 3.5
+		detailScrollView.bounces = false
+		detailScrollView.bouncesZoom = false
+	}
 
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+	
+	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+		return detailImageView
+	}
 }
