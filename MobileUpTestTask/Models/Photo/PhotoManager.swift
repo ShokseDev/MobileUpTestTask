@@ -8,6 +8,10 @@
 import Foundation
 import SwiftyVK
 
+protocol PhotoProtocol {
+	func loadPhotos(completion: @escaping (_ success: Bool) -> Void)
+}
+
 class PhotoManager: PhotoProtocol {
 	
 	private var gallery: GalleryViewController

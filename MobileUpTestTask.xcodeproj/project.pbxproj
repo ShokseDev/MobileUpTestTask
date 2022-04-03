@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E62A859727F793F000CF747D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A859627F793F000CF747D /* Photo.swift */; };
 		E62A859B27F7978A00CF747D /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A859A27F7978A00CF747D /* PhotoManager.swift */; };
-		E62A859D27F7979600CF747D /* PhotoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A859C27F7979600CF747D /* PhotoProtocol.swift */; };
 		E643AA2627F3847400BE5989 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA2527F3847400BE5989 /* AppDelegate.swift */; };
 		E643AA2827F3847400BE5989 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E643AA2727F3847400BE5989 /* SceneDelegate.swift */; };
 		E643AA2F27F3847E00BE5989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E643AA2E27F3847E00BE5989 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		A553C5E163D30546D3788FE5 /* Pods-MobileUpTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileUpTestTask.debug.xcconfig"; path = "Target Support Files/Pods-MobileUpTestTask/Pods-MobileUpTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		E62A859627F793F000CF747D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E62A859A27F7978A00CF747D /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
-		E62A859C27F7979600CF747D /* PhotoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProtocol.swift; sourceTree = "<group>"; };
 		E643AA2227F3847400BE5989 /* MobileUpTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileUpTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E643AA2527F3847400BE5989 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E643AA2727F3847400BE5989 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			children = (
 				E62A859627F793F000CF747D /* Photo.swift */,
 				E62A859A27F7978A00CF747D /* PhotoManager.swift */,
-				E62A859C27F7979600CF747D /* PhotoProtocol.swift */,
 			);
 			path = Photo;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E62A859727F793F000CF747D /* Photo.swift in Sources */,
-				E62A859D27F7979600CF747D /* PhotoProtocol.swift in Sources */,
 				E643AA2627F3847400BE5989 /* AppDelegate.swift in Sources */,
 				E62A859B27F7978A00CF747D /* PhotoManager.swift in Sources */,
 				E643AA5727F68B7D00BE5989 /* GalleryCollectionViewCell.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 import SwiftyVK
 import Kingfisher
 
-class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayout {
+class GalleryViewController: UIViewController {
 	
 	public var photoGallery = [Photo]()
 	public var photosHaveBeenLoaded = false
@@ -21,7 +21,6 @@ class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
     @IBOutlet weak var galleryCollectionView: UICollectionView!
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-	
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +48,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayou
 		galleryCollectionView.register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 		galleryCollectionView.isHidden = true
 		galleryCollectionView.dataSource = self
+		galleryCollectionView.delegate = self
 		galleryCollectionView.reloadData()
 	}
 	
@@ -78,6 +78,7 @@ class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayou
 }
 
 extension GalleryViewController: UICollectionViewDataSource {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return photoGallery.count
     }
@@ -88,17 +89,25 @@ extension GalleryViewController: UICollectionViewDataSource {
 			fatalError("nil cell in \(#function)")
 		}
 		cell.cellImageView.image = UIImage(named: "noPhoto")
-		if photosHaveBeenLoaded, let url = URL(string: photoGallery[indexPath.row].biggestImage.url) {
+		if photosHaveBeenLoaded {
+			let url = URL(string: photoGallery[indexPath.row].biggestImage.url)
 			cell.cellImageView.kf.setImage(with: url)
 			activityIndicator.isHidden = true
 		}
 		return cell
     }
+    
+}
+
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let spacing = (itemsPerRow - 1) * itemsSpacing
-		let size = (collectionView.bounds.width - spacing) / itemsPerRow
-		return CGSize(width: size, height: size)
+
+		let frameCV = collectionView.frame
+		let widhtCell = frameCV.width / CGFloat(itemsPerRow)
+		let heightCell = widhtCell
+
+		let spacing = CGFloat(itemsPerRow + 1) * itemsSpacing / CGFloat(itemsPerRow)
+		return CGSize(width: widhtCell - spacing, height: heightCell - (itemsSpacing * 2))
 	}
-    
 }
