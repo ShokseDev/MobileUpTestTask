@@ -39,12 +39,26 @@ class GalleryViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .systemBackground
         self.navigationController?.navigationBar.barTintColor = .systemBackground
         
-        let button = UIBarButtonItem(title: "Выход", style: .plain, target: self, action: #selector(logout))
+		let button = UIBarButtonItem(title: "LogoutButton".localized, style: .plain, target: self, action: #selector(logout))
         button.tintColor = .label
         button.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)], for: .normal)
         self.navigationItem.rightBarButtonItem = button
     }
 	
+	@objc private func logout() {
+		let alert = UIAlertController(title: nil, message: "LogoutAlertMessage".localized, preferredStyle: .actionSheet)
+		alert.addAction(UIAlertAction(title: "LoginAlertAction".localized, style: .destructive, handler: { _ in
+			VK.sessions.default.logOut()
+			alert.dismiss(animated: true, completion: nil)
+			self.dismiss(animated: true, completion: nil)
+		}))
+		alert.addAction(UIAlertAction(title: "LoginAlertCancel".localized, style: .cancel, handler: { _ in
+			alert.dismiss(animated: true, completion: nil)
+		}))
+		present(alert, animated: true, completion: nil)
+	}
+	
+	// MARK: Collection View configuration
 	private func setupCollectionView() {
 		galleryCollectionView.register(GalleryCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
 		galleryCollectionView.isHidden = true
@@ -53,6 +67,7 @@ class GalleryViewController: UIViewController {
 		galleryCollectionView.reloadData()
 	}
 	
+	// MARK: Checking if photos downloaded successfully
 	private func loadPhotos() {
 		DispatchQueue.main.async {
 			self.activityIndicator.startAnimating()
@@ -67,15 +82,14 @@ class GalleryViewController: UIViewController {
 				}
 			} else {
 				self.activityIndicator.stopAnimating()
-				print("Fail loading photos in \(#function)")
+				self.activityIndicator.isHidden = true
+				let alert = UIAlertController(title: "LoginAlertTitle".localized, message: "LoginAlertMessage".localized, preferredStyle: .alert)
+				let alertOK = UIAlertAction(title: "LoginAlertAction".localized, style: .default)
+				alert.addAction(alertOK)
+				self.present(alert, animated: true, completion: nil)
 			}
 		}
 	}
-    
-    @objc private func logout() {
-        VK.sessions.default.logOut()
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 
 extension GalleryViewController: UICollectionViewDataSource {
@@ -88,7 +102,7 @@ extension GalleryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let optCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GalleryCollectionViewCell
 		guard let cell = optCell else {
-			fatalError("nil cell in \(#function)")
+			fatalError("nil cell")
 		}
 		cell.cellImageView.image = UIImage(named: "noPhoto")
 		if photosHaveBeenLoaded {
@@ -105,9 +119,8 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 	
 	// MARK: Setup cell size and spacing
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-		let frameCV = collectionView.frame
-		let widhtCell = frameCV.width / CGFloat(itemsPerRow)
+		
+		let widhtCell = collectionView.frame.width / CGFloat(itemsPerRow)
 		let heightCell = widhtCell
 
 		let spacing = CGFloat(itemsPerRow - 1) * itemsSpacing / CGFloat(itemsPerRow)
@@ -121,7 +134,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout {
 		detailVC.date = photoGallery[indexPath.row].date
 		navigationItem.backButtonTitle = ""
 		guard let navigationController = navigationController else {
-			fatalError("nil navigationController in \(#function)")
+			fatalError("nil navigationController")
 		}
 		navigationController.navigationBar.tintColor = .black
 		navigationController.pushViewController(detailVC, animated: true)

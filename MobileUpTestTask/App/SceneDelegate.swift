@@ -19,6 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		
 		let window = UIWindow(windowScene: windowScene)
 		
+		// Disable dark mode
+		window.overrideUserInterfaceStyle = .light
+		
+		// Setup LoginScreenVC is initial
 		let root = LoginScreenViewController(nibName: "LoginScreen", bundle: nil)
 		window.rootViewController = root
 		self.window = window

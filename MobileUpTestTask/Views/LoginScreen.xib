@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginScreenViewController" customModule="MobileUpTestTask" customModuleProvider="target">
             <connections>
+                <outlet property="authButton" destination="116-di-JdW" id="nE1-ZS-Tge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,13 +38,6 @@ Gallery</string>
                         <constraint firstAttribute="height" constant="56" id="Kes-7M-K3i"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="Вход через VK"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="authButtonAction:" destination="-1" eventType="touchUpInside" id="epk-Ic-37Q"/>
                     </connections>

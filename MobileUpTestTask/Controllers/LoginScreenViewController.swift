@@ -10,23 +10,19 @@ import SwiftyVK
 
 final class LoginScreenViewController: UIViewController {
 	
+	
+	@IBOutlet weak var authButton: UIButton!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		authButtonConfig()
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(false)
 		// MARK: Login action if user has access token
 		if VK.sessions.default.accessToken != nil {
-			
 			galleryShow()
-		}
-	}
-	
-	@IBAction func authButtonAction(_ sender: UIButton) {
-		// MARK: Login action if user doesn't have access token
-		if VK.sessions.default.accessToken == nil {
-			auth()
 		}
 	}
 	
@@ -59,11 +55,25 @@ final class LoginScreenViewController: UIViewController {
 	
 	// MARK: Alert function
 	private func loginAlert() {
-		let alert = UIAlertController(title: "Ooops", message: "Something went wrong, please try again later", preferredStyle: .alert)
-		let alertOK = UIAlertAction(title: "OK", style: .default)
-		
+		let alert = UIAlertController(title: "LoginAlertTitle".localized, message: "LoginAlertMessage".localized, preferredStyle: .alert)
+		let alertOK = UIAlertAction(title: "LoginAlertAction".localized, style: .default)
 		alert.addAction(alertOK)
-		
 		self.present(alert, animated: true, completion: nil)
 	}
+	
+	// MARK: Auth button action and configuration
+	@IBAction func authButtonAction(_ sender: UIButton) {
+		// MARK: Login action if user doesn't have access token
+		if VK.sessions.default.accessToken == nil {
+			auth()
+		}
+	}
+	
+	private func authButtonConfig() {
+		authButton.setTitle("LoginButton".localized, for: .normal)
+		authButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+		authButton.layer.cornerRadius = 8
+		authButton.layer.masksToBounds = true
+	}
+	
 }

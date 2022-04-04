@@ -24,7 +24,6 @@ class DetailViewController: UIViewController {
 		dateTitle()
 		shareButton()
 		scrollViewConfig()
-		
     }
 
 	// MARK: Load image from gallery
@@ -40,10 +39,10 @@ class DetailViewController: UIViewController {
 		if let date = date {
 			let date = Date(timeIntervalSince1970: date)
 			let formatter = DateFormatter()
-			formatter.dateFormat = "MMM dd, yyyy"
+			formatter.dateFormat = "d MMMM yyyy"
 			title = formatter.string(from: date)
 		} else {
-			title = "No date:("
+			title = "DateTitle".localized
 		}
 	}
 	
@@ -56,7 +55,7 @@ class DetailViewController: UIViewController {
 	// MARK: Present Activity View if button was tapped
 	@objc private func shareAction() {
 		guard let image = detailImageView.image else {
-			fatalError("nil image in \(#function)")
+			fatalError("nil image")
 		}
 		setupActivityView(image: image)
 	}
@@ -66,27 +65,29 @@ class DetailViewController: UIViewController {
 		let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
 		activityVC.completionWithItemsHandler = {
 			activity, success, _, _ in if activity == .saveToCameraRoll && success == true {
-				self.succecAlert()
+				self.successAlert()
 			}
 		}
 		present(activityVC, animated: true, completion: nil)
 	}
 	
 	// MARK: Present alert if the save was succesful
-	private func succecAlert() {
-		let alert = UIAlertController(title: nil, message: "Image successfully saved to gallery", preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+	private func successAlert() {
+		let alert = UIAlertController(title: nil, message: "SuccessAlertMessage".localized, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "SuccessAlertAction".localized, style: .default, handler: { _ in
 			alert.dismiss(animated: true, completion: nil)
 		}))
 		present(alert, animated: true, completion: nil)
 	}
 	
-	// MARK: Zoom Action setup
 	
+	
+	// MARK: Zoom Action setup
+
 	private func scrollViewConfig() {
 		detailScrollView.delegate = self
 		detailScrollView.minimumZoomScale = 1.0
-		detailScrollView.maximumZoomScale = 3.5
+		detailScrollView.maximumZoomScale = 4.0
 		detailScrollView.bounces = false
 		detailScrollView.bouncesZoom = false
 	}
@@ -94,7 +95,7 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UIScrollViewDelegate {
-	
+
 	func viewForZooming(in scrollView: UIScrollView) -> UIView? {
 		return detailImageView
 	}

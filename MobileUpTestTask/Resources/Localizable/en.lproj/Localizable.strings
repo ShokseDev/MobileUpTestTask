@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  MobileUpTestTask
+
+  Created by Daniil Aleshchenko on 04.04.2022.
+  
+*/
+
+// MARK: LoginScreen
+// Alert
+"LoginAlertTitle" = "Something went wrong";
+"LoginAlertMessage" = "Please try again later";
+"LoginAlertAction" = "OK";
+// Button
+"LoginButton" = "Login via VK";
+
+// MARK: Gallery
+// Logout alert
+"LogoutAlertMessage" = "Are you sure you want to logout?";
+"LoginAlertAction" = "Yes";
+"LoginAlertCancel" = "No";
+// Photo downloader alert
+"DownloadAlertTitle" = "Failed to download photos";
+"DownloadAlertMessage" = "Please check your internet connection or try again later";
+"DownloadAlertAction" = "OK";
+// Button
+"LogoutButton" = "Logout";
+
+// MARK: Detail
+// Success alert
+"SuccessAlertMessage" = "Image successfully saved to gallery";
+"SuccessAlertAction" = "OK";
+// Failed to load date
+"DateTitle" = "No date:(";
