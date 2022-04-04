@@ -122,9 +122,9 @@
 		E643AA3927F387D200BE5989 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA3E27F38A7700BE5989 /* LoginScreen.xib */,
-				E643AA5227F6741B00BE5989 /* GalleryView.xib */,
-				E686F97527FA7A67002D4EB5 /* DetailView.xib */,
+				E686F97827FA86CC002D4EB5 /* LoginScreen */,
+				E686F97927FA86D4002D4EB5 /* Gallery */,
+				E686F97A27FA86DE002D4EB5 /* Detail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,7 +132,7 @@
 		E643AA3A27F387ED00BE5989 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E643AA3D27F38A7700BE5989 /* LoginScreenViewController.swift */,
+				E686F97727FA8697002D4EB5 /* LoginScreen */,
 				E643AA4C27F4F9A900BE5989 /* Gallery */,
 				E686F97027FA7328002D4EB5 /* Detail */,
 			);
@@ -190,6 +190,38 @@
 			isa = PBXGroup;
 			children = (
 				E686F92D27F9EEAA002D4EB5 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E686F97727FA8697002D4EB5 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA3D27F38A7700BE5989 /* LoginScreenViewController.swift */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		E686F97827FA86CC002D4EB5 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA3E27F38A7700BE5989 /* LoginScreen.xib */,
+			);
+			path = LoginScreen;
+			sourceTree = "<group>";
+		};
+		E686F97927FA86D4002D4EB5 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				E643AA5227F6741B00BE5989 /* GalleryView.xib */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		E686F97A27FA86DE002D4EB5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E686F97527FA7A67002D4EB5 /* DetailView.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
